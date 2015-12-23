@@ -56,7 +56,7 @@ if(isset($_GET['delpost'])){
 
 			$query = "SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC";
 				$rs=my_select($query);
-			while($row=mysql_fetch_array($rs)){
+			while($row=$rs->fetch(PDO::FETCH_BOTH){
 				
 				echo '<tr>';
 				echo '<td>'.$row['postTitle'].'</td>';

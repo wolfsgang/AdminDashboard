@@ -62,7 +62,7 @@ if(isset($_GET['deluser'])){
 
 			$query="SELECT memberID, username, email FROM blog_members ORDER BY username";
 			$rs=my_select($query);
-			while($row =mysql_fetch_array($rs)){
+			while($row =$rs->fetch(PDO::FETCH_BOTH)){
 				
 				echo '<tr>';
 				echo '<td>'.$row['username'].'</td>';

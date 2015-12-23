@@ -98,7 +98,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 		    $pid=$_GET['id'];
             $query="SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = '".$pid."'";
 			$rs=my_select($query);
-			$row = mysql_fetch_array($rs); 
+			$row = $rs->fetch(PDO::FETCH_BOTH); 
 
 		} catch(PDOException $e) {
 		    echo $e->getMessage();
